@@ -2,7 +2,8 @@
   "permissions": {
     "allow": [
       "Bash(npm install *)",
-      "WebFetch(domain:www.thechessgiant.com)"
+      "WebFetch(domain:www.thechessgiant.com)",
+      "Bash(npx astro *)"
     ]
   }
 }

@@ -21,6 +21,7 @@ const currentPath = Astro.url.pathname;
 
       :root {
         --bg: #faf9f6;
+        --bg-soft: #f0ede6;
         --bg-dark: #1a1e23;
         --bg-card: #ffffff;
         --text: #2d2d2d;
@@ -33,7 +34,7 @@ const currentPath = Astro.url.pathname;
         --shadow-md: 0 4px 24px rgba(0,0,0,0.12);
         --font-serif: 'Playfair Display', Georgia, serif;
         --font-sans: 'Inter', system-ui, sans-serif;
-        --max-width: 1100px;
+        --max-width: 1080px;
       }
 
       html {
@@ -77,12 +78,12 @@ const currentPath = Astro.url.pathname;
 
       /* ── Navbar ── */
       nav {
-        background: var(--bg-dark);
+        background: var(--bg);
         padding: 0 24px;
         position: sticky;
         top: 0;
         z-index: 100;
-        border-bottom: 2px solid var(--accent);
+        border-bottom: 1px solid var(--border);
       }
 
       .nav-inner {
@@ -91,56 +92,62 @@ const currentPath = Astro.url.pathname;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        height: 64px;
+        height: 68px;
       }
 
       .nav-logo {
         font-family: var(--font-serif);
-        font-size: 1.3rem;
+        font-size: 1.25rem;
         font-weight: 700;
-        color: var(--text-light);
-        display: flex;
-        align-items: center;
-        gap: 10px;
+        color: var(--text);
+        letter-spacing: 0.01em;
       }
 
-      .nav-logo span {
+      .nav-logo em {
+        font-style: normal;
         color: var(--accent);
       }
 
       .nav-links {
         display: flex;
-        gap: 8px;
+        gap: 4px;
         list-style: none;
       }
 
       .nav-links a {
-        color: #a0a0a0;
-        font-size: 0.9rem;
+        color: var(--text-muted);
+        font-size: 0.88rem;
         font-weight: 500;
-        padding: 8px 16px;
-        border-radius: 6px;
-        transition: color 0.2s, background 0.2s;
-        letter-spacing: 0.02em;
+        padding: 8px 14px;
+        border-radius: 4px;
+        transition: color 0.18s;
+        letter-spacing: 0.01em;
       }
 
-      .nav-links a:hover,
-      .nav-links a.active {
-        color: var(--text-light);
-        background: rgba(255,255,255,0.06);
+      .nav-links a:hover {
+        color: var(--text);
       }
 
       .nav-links a.active {
-        color: var(--accent);
+        color: var(--text);
+        position: relative;
+      }
+
+      .nav-links a.active::after {
+        content: "";
+        position: absolute;
+        left: 14px;
+        right: 14px;
+        bottom: 2px;
+        height: 1px;
+        background: var(--accent);
       }
 
       /* ── Footer ── */
       footer {
         background: var(--bg-dark);
-        color: #6b7280;
-        padding: 40px 24px;
-        margin-top: 80px;
-        border-top: 2px solid var(--accent);
+        color: #8a857a;
+        padding: 56px 24px 40px;
       }
 
       .footer-inner {
@@ -149,33 +156,49 @@ const currentPath = Astro.url.pathname;
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 8px;
+        gap: 10px;
         text-align: center;
-        font-size: 0.875rem;
+        font-size: 0.88rem;
       }
 
       .footer-inner strong {
         color: var(--text-light);
         font-family: var(--font-serif);
-        font-size: 1rem;
+        font-weight: 600;
+        font-size: 1.1rem;
+        letter-spacing: 0.02em;
+      }
+
+      .footer-inner p {
+        max-width: 480px;
       }
 
       .footer-links {
         display: flex;
-        gap: 20px;
+        gap: 24px;
         flex-wrap: wrap;
         justify-content: center;
-        margin-top: 4px;
+        margin-top: 12px;
+        padding-top: 20px;
+        border-top: 1px solid rgba(255,255,255,0.06);
+        width: 100%;
+        max-width: 480px;
       }
 
       .footer-links a {
-        color: #6b7280;
+        color: #8a857a;
         font-size: 0.82rem;
-        transition: color 0.2s;
+        transition: color 0.18s;
       }
 
       .footer-links a:hover {
-        color: var(--accent);
+        color: var(--text-light);
+      }
+
+      .footer-meta {
+        margin-top: 18px;
+        font-size: 0.78rem;
+        color: #5a5650;
       }
     </style>
   </head>
@@ -183,7 +206,7 @@ const currentPath = Astro.url.pathname;
     <nav>
       <div class="nav-inner">
         <a href="/" class="nav-logo">
-          ♟ <span>Blunder</span> Man
+          Blunder <em>Man</em>
         </a>
         <ul class="nav-links">
           <li><a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a></li>
@@ -200,7 +223,7 @@ const currentPath = Astro.url.pathname;
     <footer>
       <div class="footer-inner">
         <strong>Blunder Man</strong>
-        <p>Chess coaching with Owen Matthess — stop blundering, start winning.</p>
+        <p>Chess coaching with Owen Matthess.</p>
         <div class="footer-links">
           <a href="/lessons">Lessons</a>
           <a href="/support">Support</a>
@@ -208,9 +231,7 @@ const currentPath = Astro.url.pathname;
           <a href="https://discord.gg/U5sMBn3Wq5" target="_blank" rel="noopener">Discord</a>
           <a href="https://patreon.com/BlunderMan" target="_blank" rel="noopener">Patreon</a>
         </div>
-        <p style="margin-top: 16px; font-size: 0.8rem; opacity: 0.6;">
-          © {new Date().getFullYear()} Blunder Man — All rights reserved
-        </p>
+        <p class="footer-meta">© {new Date().getFullYear()} Blunder Man. All rights reserved.</p>
       </div>
     </footer>
   </body>
