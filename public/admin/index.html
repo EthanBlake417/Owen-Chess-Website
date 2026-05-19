@@ -6,6 +6,61 @@
     <title>Content Manager</title>
   </head>
   <body>
+    <script>
+      window.CMS_MANUAL_INIT = true;
+    </script>
     <script src="https://unpkg.com/decap-cms@^3.0.0/dist/decap-cms.js"></script>
+    <script>
+      CMS.init({
+        config: {
+          backend: {
+            name: 'github',
+            repo: 'EthanBlake417/Owen-Chess-Website',
+            branch: 'main',
+            base_url: 'https://owen-chess-website.vercel.app',
+            auth_endpoint: 'api/auth',
+          },
+          media_folder: 'public/images',
+          public_folder: '/images',
+          collections: [
+            {
+              name: 'pages',
+              label: 'Pages',
+              files: [
+                {
+                  name: 'home',
+                  label: 'Home Page',
+                  file: 'src/content/home.json',
+                  fields: [
+                    { label: 'Name', name: 'name', widget: 'string' },
+                    { label: 'Tagline', name: 'tagline', widget: 'string' },
+                    { label: 'Bio', name: 'bio', widget: 'text' },
+                    { label: 'Profile Photo', name: 'photo', widget: 'image', required: false },
+                  ],
+                },
+                {
+                  name: 'lessons',
+                  label: 'Lessons Page',
+                  file: 'src/content/lessons.json',
+                  fields: [
+                    { label: 'Intro Text', name: 'intro', widget: 'text' },
+                    {
+                      label: 'Packages',
+                      name: 'packages',
+                      widget: 'list',
+                      fields: [
+                        { label: 'Title', name: 'title', widget: 'string' },
+                        { label: 'Price', name: 'price', widget: 'string' },
+                        { label: 'Description', name: 'description', widget: 'text' },
+                      ],
+                    },
+                  ],
+                },
+              ],
+            },
+          ],
+        },
+      });
+    </script>
   </body>
 </html>
