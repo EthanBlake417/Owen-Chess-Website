@@ -1,0 +1,20 @@
+{
+  "intro": "Whether you're just starting out or pushing toward your next rating milestone, personalized 1-on-1 coaching accelerates your progress faster than any book or course.",
+  "packages": [
+    {
+      "title": "Single Session",
+      "price": "$60",
+      "description": "One 60-minute coaching session. Great for a specific opening, endgame question, or game analysis."
+    },
+    {
+      "title": "Starter Pack",
+      "price": "$160",
+      "description": "Three 60-minute sessions. Build on each lesson with continuity and a tailored study plan."
+    },
+    {
+      "title": "Monthly Training",
+      "price": "$280",
+      "description": "Six sessions per month with ongoing game review, custom puzzles, and direct feedback between sessions."
+    }
+  ]
+}

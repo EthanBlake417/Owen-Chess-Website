@@ -1,0 +1,274 @@
+---
+import Layout from '../layouts/Layout.astro';
+import lessonsData from '../content/lessons.json';
+
+// Replace with your friend's Cal.com username
+const CAL_USERNAME = 'YOUR_FRIENDS_CAL_USERNAME';
+---
+
+<Layout title="Lessons">
+  <!-- Header -->
+  <section class="page-header">
+    <div class="container">
+      <h1>1-on-1 Lessons</h1>
+      <p>{lessonsData.intro}</p>
+    </div>
+  </section>
+
+  <!-- Packages -->
+  <section class="packages">
+    <div class="container">
+      <h2>Lesson Packages</h2>
+      <div class="packages-grid">
+        {lessonsData.packages.map((pkg, i) => (
+          <div class={`package-card ${i === 1 ? 'featured' : ''}`}>
+            {i === 1 && <div class="featured-badge">Most Popular</div>}
+            <h3>{pkg.title}</h3>
+            <div class="package-price">{pkg.price}</div>
+            <p>{pkg.description}</p>
+            <a href="#book" class="btn-book">Book Now</a>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Booking -->
+  <section class="booking" id="book">
+    <div class="container">
+      <h2>Book Your Session</h2>
+      <p class="booking-intro">Choose a time that works for you. All sessions are conducted online via video call.</p>
+      <div class="cal-embed">
+        <iframe
+          src={`https://cal.com/${CAL_USERNAME}`}
+          frameborder="0"
+          style="width:100%;height:100%">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="container">
+      <h2>Frequently Asked Questions</h2>
+      <div class="faq-list">
+        <div class="faq-item">
+          <h3>What platform do sessions happen on?</h3>
+          <p>Sessions take place over video call (Zoom, Google Meet, or your preference) while sharing a chess board on Lichess or Chess.com.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What skill level is coaching for?</h3>
+          <p>All levels welcome — from complete beginners to advanced club players. The approach is tailored to your current level and goals.</p>
+        </div>
+        <div class="faq-item">
+          <h3>What should I bring to a session?</h3>
+          <p>Just yourself and a few recent games if you have them. We'll review games together and build a study plan from there.</p>
+        </div>
+        <div class="faq-item">
+          <h3>Can I cancel or reschedule?</h3>
+          <p>Yes — you can reschedule or cancel directly through Cal.com up to 24 hours before your session.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  /* ── Page Header ── */
+  .page-header {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    padding: 64px 0;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    font-size: clamp(2rem, 4vw, 3rem);
+    margin-bottom: 16px;
+  }
+
+  .page-header p {
+    font-size: 1.05rem;
+    color: #a0a0a0;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  /* ── Packages ── */
+  .packages {
+    padding: 72px 0;
+  }
+
+  .packages h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 48px;
+  }
+
+  .packages-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    align-items: start;
+  }
+
+  .package-card {
+    background: var(--bg-card);
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    padding: 36px 28px;
+    text-align: center;
+    position: relative;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.2s, transform 0.2s;
+  }
+
+  .package-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+  }
+
+  .package-card.featured {
+    border-color: var(--accent);
+    transform: scale(1.03);
+  }
+
+  .package-card.featured:hover {
+    transform: scale(1.03) translateY(-2px);
+  }
+
+  .featured-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 5px 16px;
+    border-radius: 20px;
+  }
+
+  .package-card h3 {
+    font-size: 1.3rem;
+    margin-bottom: 12px;
+  }
+
+  .package-price {
+    font-size: 2.4rem;
+    font-weight: 700;
+    font-family: var(--font-serif);
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  .package-card p {
+    font-size: 0.95rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+    margin-bottom: 28px;
+  }
+
+  .btn-book {
+    display: inline-block;
+    background: var(--accent);
+    color: white;
+    padding: 11px 28px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background 0.2s, transform 0.1s;
+  }
+
+  .btn-book:hover {
+    background: var(--accent-dark);
+    transform: translateY(-1px);
+  }
+
+  /* ── Booking ── */
+  .booking {
+    background: #f0ede6;
+    padding: 72px 0;
+  }
+
+  .booking h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+
+  .booking-intro {
+    text-align: center;
+    color: var(--text-muted);
+    margin-bottom: 40px;
+    font-size: 1rem;
+  }
+
+  .cal-embed {
+    width: 100%;
+    height: 700px;
+    overflow: scroll;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    background: white;
+  }
+
+  /* ── FAQ ── */
+  .faq {
+    padding: 72px 0;
+  }
+
+  .faq h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 48px;
+  }
+
+  .faq-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    max-width: 860px;
+    margin: 0 auto;
+  }
+
+  .faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 28px;
+  }
+
+  .faq-item h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: var(--text);
+  }
+
+  .faq-item p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 768px) {
+    .packages-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .package-card.featured {
+      transform: none;
+    }
+
+    .faq-list {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
