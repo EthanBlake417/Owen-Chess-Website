@@ -188,6 +188,7 @@ const currentPath = Astro.url.pathname;
         <ul class="nav-links">
           <li><a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a></li>
           <li><a href="/lessons" class={currentPath === '/lessons' ? 'active' : ''}>Lessons</a></li>
+          <li><a href="/support" class={currentPath === '/support' ? 'active' : ''}>Support</a></li>
         </ul>
       </div>
     </nav>
@@ -201,10 +202,11 @@ const currentPath = Astro.url.pathname;
         <strong>Blunder Man</strong>
         <p>Chess coaching with Owen Matthess — stop blundering, start winning.</p>
         <div class="footer-links">
+          <a href="/lessons">Lessons</a>
+          <a href="/support">Support</a>
           <a href="https://www.youtube.com/@Blunder_Man" target="_blank" rel="noopener">YouTube</a>
           <a href="https://discord.gg/U5sMBn3Wq5" target="_blank" rel="noopener">Discord</a>
           <a href="https://patreon.com/BlunderMan" target="_blank" rel="noopener">Patreon</a>
-          <a href="https://instagram.com/blunderman_yt" target="_blank" rel="noopener">Instagram</a>
         </div>
         <p style="margin-top: 16px; font-size: 0.8rem; opacity: 0.6;">
           © {new Date().getFullYear()} Blunder Man — All rights reserved

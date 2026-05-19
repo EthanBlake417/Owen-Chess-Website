@@ -2,12 +2,11 @@
 import Layout from '../layouts/Layout.astro';
 import lessonsData from '../content/lessons.json';
 
-// Replace with your friend's Cal.com username
 const CAL_USERNAME = 'ethan-blake-testing';
 ---
 
 <Layout title="Lessons">
-  <!-- Header -->
+
   <section class="page-header">
     <div class="container">
       <h1>1-on-1 Lessons</h1>
@@ -18,13 +17,13 @@ const CAL_USERNAME = 'ethan-blake-testing';
   <!-- Packages -->
   <section class="packages">
     <div class="container">
-      <h2>Lesson Packages</h2>
+      <h2>Choose a Package</h2>
       <div class="packages-grid">
         {lessonsData.packages.map((pkg, i) => (
-          <div class={`package-card ${i === 1 ? 'featured' : ''}`}>
+          <div class={`pkg-card ${i === 1 ? 'featured' : ''}`}>
             {i === 1 && <div class="featured-badge">Most Popular</div>}
             <h3>{pkg.title}</h3>
-            <div class="package-price">{pkg.price}</div>
+            <div class="pkg-price">{pkg.price}</div>
             <p>{pkg.description}</p>
             <a href="#book" class="btn-book">Book Now</a>
           </div>
@@ -37,8 +36,8 @@ const CAL_USERNAME = 'ethan-blake-testing';
   <section class="booking" id="book">
     <div class="container">
       <h2>Book Your Session</h2>
-      <p class="booking-intro">Choose a time that works for you. All sessions are conducted online via video call.</p>
-      <div class="cal-embed">
+      <p class="section-sub">All sessions are conducted online via video call.</p>
+      <div class="cal-wrap">
         <iframe
           src={`https://cal.com/${CAL_USERNAME}`}
           frameborder="0"
@@ -51,47 +50,47 @@ const CAL_USERNAME = 'ethan-blake-testing';
   <!-- FAQ -->
   <section class="faq">
     <div class="container">
-      <h2>Frequently Asked Questions</h2>
-      <div class="faq-list">
+      <h2>FAQ</h2>
+      <div class="faq-grid">
         <div class="faq-item">
           <h3>What platform do sessions happen on?</h3>
-          <p>Sessions take place over video call (Zoom, Google Meet, or your preference) while sharing a chess board on Lichess or Chess.com.</p>
+          <p>Video call (Zoom or Google Meet) while sharing a board on Lichess or Chess.com.</p>
         </div>
         <div class="faq-item">
-          <h3>What skill level is coaching for?</h3>
-          <p>All levels welcome — from complete beginners to advanced club players. The approach is tailored to your current level and goals.</p>
+          <h3>What skill level is this for?</h3>
+          <p>All levels welcome. Sessions are tailored to where you are and where you want to go.</p>
         </div>
         <div class="faq-item">
-          <h3>What should I bring to a session?</h3>
-          <p>Just yourself and a few recent games if you have them. We'll review games together and build a study plan from there.</p>
+          <h3>What should I bring?</h3>
+          <p>Just yourself. A few recent games to review is a bonus but not required.</p>
         </div>
         <div class="faq-item">
-          <h3>Can I cancel or reschedule?</h3>
-          <p>Yes — you can reschedule or cancel directly through Cal.com up to 24 hours before your session.</p>
+          <h3>Can I reschedule?</h3>
+          <p>Yes — reschedule or cancel directly through Cal.com up to 24 hours before your session.</p>
         </div>
       </div>
     </div>
   </section>
+
 </Layout>
 
 <style>
-  /* ── Page Header ── */
   .page-header {
     background: var(--bg-dark);
     color: var(--text-light);
-    padding: 64px 0;
+    padding: 60px 0;
     text-align: center;
   }
 
   .page-header h1 {
-    font-size: clamp(2rem, 4vw, 3rem);
-    margin-bottom: 16px;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    margin-bottom: 14px;
   }
 
   .page-header p {
-    font-size: 1.05rem;
-    color: #a0a0a0;
-    max-width: 600px;
+    color: #9095a0;
+    font-size: 1rem;
+    max-width: 580px;
     margin: 0 auto;
     line-height: 1.7;
   }
@@ -101,21 +100,21 @@ const CAL_USERNAME = 'ethan-blake-testing';
     padding: 72px 0;
   }
 
-  .packages h2 {
+  h2 {
+    font-size: 1.8rem;
     text-align: center;
-    font-size: 2rem;
-    margin-bottom: 48px;
+    margin-bottom: 40px;
   }
 
   .packages-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
+    gap: 22px;
     align-items: start;
   }
 
-  .package-card {
-    background: var(--bg-card);
+  .pkg-card {
+    background: #fff;
     border: 2px solid var(--border);
     border-radius: 14px;
     padding: 36px 28px;
@@ -125,64 +124,65 @@ const CAL_USERNAME = 'ethan-blake-testing';
     transition: box-shadow 0.2s, transform 0.2s;
   }
 
-  .package-card:hover {
+  .pkg-card:hover {
     box-shadow: var(--shadow-md);
     transform: translateY(-2px);
   }
 
-  .package-card.featured {
+  .pkg-card.featured {
     border-color: var(--accent);
     transform: scale(1.03);
   }
 
-  .package-card.featured:hover {
+  .pkg-card.featured:hover {
     transform: scale(1.03) translateY(-2px);
   }
 
   .featured-badge {
     position: absolute;
-    top: -14px;
+    top: -13px;
     left: 50%;
     transform: translateX(-50%);
     background: var(--accent);
-    color: white;
-    font-size: 0.75rem;
+    color: #fff;
+    font-size: 0.72rem;
     font-weight: 700;
     letter-spacing: 0.08em;
     text-transform: uppercase;
-    padding: 5px 16px;
+    padding: 4px 14px;
     border-radius: 20px;
+    white-space: nowrap;
   }
 
-  .package-card h3 {
-    font-size: 1.3rem;
-    margin-bottom: 12px;
+  .pkg-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
   }
 
-  .package-price {
-    font-size: 2.4rem;
+  .pkg-price {
+    font-size: 2.6rem;
     font-weight: 700;
     font-family: var(--font-serif);
     color: var(--accent);
-    margin-bottom: 16px;
+    margin-bottom: 14px;
   }
 
-  .package-card p {
-    font-size: 0.95rem;
+  .pkg-card p {
+    font-size: 0.92rem;
     color: var(--text-muted);
     line-height: 1.7;
-    margin-bottom: 28px;
+    margin-bottom: 24px;
   }
 
   .btn-book {
     display: inline-block;
     background: var(--accent);
-    color: white;
+    color: #fff;
     padding: 11px 28px;
     border-radius: 8px;
     font-weight: 600;
-    font-size: 0.95rem;
-    transition: background 0.2s, transform 0.1s;
+    font-size: 0.92rem;
+    transition: background 0.18s, transform 0.1s;
   }
 
   .btn-book:hover {
@@ -196,26 +196,20 @@ const CAL_USERNAME = 'ethan-blake-testing';
     padding: 72px 0;
   }
 
-  .booking h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 12px;
-  }
-
-  .booking-intro {
+  .section-sub {
     text-align: center;
     color: var(--text-muted);
-    margin-bottom: 40px;
-    font-size: 1rem;
+    margin-bottom: 36px;
+    margin-top: -28px;
   }
 
-  .cal-embed {
+  .cal-wrap {
     width: 100%;
     height: 700px;
     overflow: scroll;
     border-radius: 12px;
     border: 1px solid var(--border);
-    background: white;
+    background: #fff;
   }
 
   /* ── FAQ ── */
@@ -223,52 +217,36 @@ const CAL_USERNAME = 'ethan-blake-testing';
     padding: 72px 0;
   }
 
-  .faq h2 {
-    text-align: center;
-    font-size: 2rem;
-    margin-bottom: 48px;
-  }
-
-  .faq-list {
+  .faq-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 28px;
-    max-width: 860px;
+    gap: 20px;
+    max-width: 820px;
     margin: 0 auto;
   }
 
   .faq-item {
-    background: var(--bg-card);
+    background: #fff;
     border: 1px solid var(--border);
     border-radius: 10px;
-    padding: 28px;
+    padding: 26px;
   }
 
   .faq-item h3 {
-    font-size: 1rem;
+    font-size: 0.95rem;
     font-weight: 600;
-    margin-bottom: 10px;
-    color: var(--text);
+    margin-bottom: 8px;
   }
 
   .faq-item p {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
     color: var(--text-muted);
     line-height: 1.7;
   }
 
-  /* ── Responsive ── */
   @media (max-width: 768px) {
-    .packages-grid {
-      grid-template-columns: 1fr;
-    }
-
-    .package-card.featured {
-      transform: none;
-    }
-
-    .faq-list {
-      grid-template-columns: 1fr;
-    }
+    .packages-grid { grid-template-columns: 1fr; }
+    .pkg-card.featured { transform: none; }
+    .faq-grid { grid-template-columns: 1fr; }
   }
 </style>

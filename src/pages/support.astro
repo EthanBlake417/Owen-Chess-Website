@@ -1,0 +1,295 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Support">
+
+  <section class="page-header">
+    <div class="container">
+      <h1>Support the Channel</h1>
+      <p>Every bit of support helps keep the content going. Thank you — it genuinely means a lot.</p>
+    </div>
+  </section>
+
+  <!-- Featured: Patreon -->
+  <section class="patreon-section">
+    <div class="container">
+      <div class="patreon-card">
+        <div class="patreon-text">
+          <p class="label">Join the Community</p>
+          <h2>Become a Patron</h2>
+          <p>Get exclusive content, early access to videos, and direct access to Owen. Support at whatever level works for you.</p>
+          <a href="https://patreon.com/BlunderMan" target="_blank" rel="noopener" class="btn-patreon">
+            Join on Patreon →
+          </a>
+        </div>
+        <div class="patreon-icon">♛</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Support Grid -->
+  <section class="support-grid-section">
+    <div class="container">
+      <h2>Other Ways to Help</h2>
+      <div class="support-grid">
+
+        <a href="https://paypal.com/ncp/payment/YM3PF6FPDC26G" target="_blank" rel="noopener" class="s-card">
+          <div class="s-icon">💙</div>
+          <h3>Donate via PayPal</h3>
+          <p>Make a one-time donation of any amount. No account needed.</p>
+        </a>
+
+        <a href="https://blunder-man.myspreadshop.com" target="_blank" rel="noopener" class="s-card">
+          <div class="s-icon">👕</div>
+          <h3>Merch Store</h3>
+          <p>Pick up some Blunder Man gear and represent.</p>
+        </a>
+
+        <a href="https://chess.com/membership?ref_id=324248631" target="_blank" rel="noopener" class="s-card">
+          <div class="s-icon">♟</div>
+          <h3>Chess.com Membership</h3>
+          <p>Get a Chess.com membership through this link — costs you nothing extra.</p>
+        </a>
+
+        <a href="https://go.noctie.ai/blunderman" target="_blank" rel="noopener" class="s-card">
+          <div class="s-icon">🤖</div>
+          <h3>Noctie AI</h3>
+          <p>AI-powered chess training. Try it out using this referral link.</p>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Social Links -->
+  <section class="socials-section">
+    <div class="container">
+      <h2>Follow Along</h2>
+      <div class="socials-grid">
+        <a href="https://www.youtube.com/@Blunder_Man" target="_blank" rel="noopener" class="social-card">
+          <span class="s-icon">▶</span>
+          <span>YouTube</span>
+        </a>
+        <a href="https://discord.gg/U5sMBn3Wq5" target="_blank" rel="noopener" class="social-card">
+          <span class="s-icon">💬</span>
+          <span>Discord</span>
+        </a>
+        <a href="https://instagram.com/blunderman_yt" target="_blank" rel="noopener" class="social-card">
+          <span class="s-icon">📷</span>
+          <span>Instagram</span>
+        </a>
+        <a href="https://tiktok.com/@blunderman_yt" target="_blank" rel="noopener" class="social-card">
+          <span class="s-icon">🎵</span>
+          <span>TikTok</span>
+        </a>
+        <a href="https://twitch.tv/blundermanyt" target="_blank" rel="noopener" class="social-card">
+          <span class="s-icon">🎮</span>
+          <span>Twitch</span>
+        </a>
+        <a href="https://facebook.com/profile.php?id=61579270563658" target="_blank" rel="noopener" class="social-card">
+          <span class="s-icon">👤</span>
+          <span>Facebook</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+</Layout>
+
+<style>
+  .page-header {
+    background: var(--bg-dark);
+    color: var(--text-light);
+    padding: 60px 0;
+    text-align: center;
+  }
+
+  .page-header h1 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    margin-bottom: 14px;
+  }
+
+  .page-header p {
+    color: #9095a0;
+    font-size: 1rem;
+    max-width: 500px;
+    margin: 0 auto;
+    line-height: 1.7;
+  }
+
+  h2 {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  /* ── Patreon ── */
+  .patreon-section {
+    padding: 64px 0;
+  }
+
+  .patreon-card {
+    background: var(--bg-dark);
+    border-radius: 16px;
+    padding: 52px 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    color: var(--text-light);
+  }
+
+  .patreon-text .label {
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 12px;
+  }
+
+  .patreon-text h2 {
+    font-size: 2rem;
+    text-align: left;
+    margin-bottom: 14px;
+    color: #fff;
+  }
+
+  .patreon-text p {
+    color: #9095a0;
+    font-size: 1rem;
+    line-height: 1.7;
+    max-width: 460px;
+    margin-bottom: 28px;
+  }
+
+  .btn-patreon {
+    display: inline-block;
+    background: var(--accent);
+    color: #fff;
+    padding: 13px 32px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background 0.18s, transform 0.1s;
+  }
+
+  .btn-patreon:hover {
+    background: var(--accent-dark);
+    transform: translateY(-1px);
+  }
+
+  .patreon-icon {
+    font-size: 7rem;
+    opacity: 0.12;
+    flex-shrink: 0;
+  }
+
+  /* ── Support Grid ── */
+  .support-grid-section {
+    background: #f0ede6;
+    padding: 72px 0;
+  }
+
+  .support-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+
+  .s-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 28px 22px;
+    text-align: center;
+    box-shadow: var(--shadow);
+    transition: box-shadow 0.2s, transform 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .s-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+    border-color: var(--accent);
+  }
+
+  .s-icon {
+    font-size: 1.8rem;
+  }
+
+  .s-card h3 {
+    font-size: 1rem;
+    color: var(--text);
+    margin: 0;
+  }
+
+  .s-card p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  /* ── Socials ── */
+  .socials-section {
+    padding: 72px 0;
+  }
+
+  .socials-grid {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 14px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+
+  .social-card {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 22px 12px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text-muted);
+    box-shadow: var(--shadow);
+    transition: all 0.2s;
+  }
+
+  .social-card:hover {
+    border-color: var(--accent);
+    color: var(--text);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .social-card .s-icon {
+    font-size: 1.5rem;
+  }
+
+  /* ── Responsive ── */
+  @media (max-width: 900px) {
+    .support-grid { grid-template-columns: repeat(2, 1fr); }
+    .socials-grid { grid-template-columns: repeat(3, 1fr); }
+    .patreon-card { flex-direction: column; padding: 36px 28px; }
+    .patreon-icon { display: none; }
+    .patreon-text h2 { text-align: center; }
+    .patreon-text p { margin: 0 auto 28px; text-align: center; }
+    .patreon-text .label { text-align: center; }
+    .patreon-text { display: flex; flex-direction: column; align-items: center; }
+  }
+
+  @media (max-width: 500px) {
+    .support-grid { grid-template-columns: 1fr; }
+    .socials-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+</style>
