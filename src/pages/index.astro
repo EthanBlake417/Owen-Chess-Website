@@ -1,6 +1,26 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import homeData from '../content/home.json';
+
+const socials = [
+  { label: 'YouTube',   href: 'https://www.youtube.com/@Blunder_Man',                          icon: '▶' },
+  { label: 'Discord',   href: 'https://discord.gg/U5sMBn3Wq5',                                 icon: '💬' },
+  { label: 'Instagram', href: 'https://instagram.com/blunderman_yt',                            icon: '📷' },
+  { label: 'TikTok',    href: 'https://tiktok.com/@blunderman_yt',                              icon: '🎵' },
+  { label: 'Twitch',    href: 'https://twitch.tv/blundermanyt',                                 icon: '🎮' },
+  { label: 'Facebook',  href: 'https://facebook.com/profile.php?id=61579270563658',             icon: '👤' },
+];
+
+const support = [
+  { label: 'Patreon',      href: 'https://patreon.com/BlunderMan',                             desc: 'Support the channel' },
+  { label: 'Merch Store',  href: 'https://blunder-man.myspreadshop.com',                       desc: 'Blunder Man gear' },
+  { label: 'Donate',       href: 'https://paypal.com/ncp/payment/YM3PF6FPDC26G',              desc: 'via PayPal' },
+];
+
+const partners = [
+  { label: 'Chess.com',  href: 'https://chess.com/membership?ref_id=324248631', desc: 'Get a Chess.com membership' },
+  { label: 'Noctie AI',  href: 'https://go.noctie.ai/blunderman',               desc: 'AI chess training tool' },
+];
 ---
 
 <Layout title="Home">
@@ -11,11 +31,12 @@ import homeData from '../content/home.json';
         <div class="hero-text">
           <p class="hero-eyebrow">Chess Coaching</p>
           <h1>{homeData.name}</h1>
+          <p class="hero-subtitle">{homeData.subtitle}</p>
           <p class="hero-tagline">{homeData.tagline}</p>
           <p class="hero-bio">{homeData.bio}</p>
           <div class="hero-actions">
             <a href="/lessons" class="btn btn-primary">Book a Lesson</a>
-            <a href="/courses" class="btn btn-secondary">View Courses</a>
+            <a href="https://www.youtube.com/@Blunder_Man" target="_blank" rel="noopener" class="btn btn-secondary">Watch on YouTube</a>
           </div>
         </div>
         <div class="hero-photo">
@@ -28,7 +49,21 @@ import homeData from '../content/home.json';
     </div>
   </section>
 
-  <!-- Why coaching section -->
+  <!-- Socials -->
+  <section class="socials">
+    <div class="container">
+      <p class="socials-label">Find me on</p>
+      <div class="socials-row">
+        {socials.map(s => (
+          <a href={s.href} target="_blank" rel="noopener" class="social-chip">
+            <span>{s.icon}</span> {s.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why coaching -->
   <section class="why">
     <div class="container">
       <h2>Why 1-on-1 Coaching?</h2>
@@ -40,8 +75,8 @@ import homeData from '../content/home.json';
         </div>
         <div class="why-card">
           <div class="why-icon">♜</div>
-          <h3>Structured Improvement</h3>
-          <p>A clear roadmap from where you are to where you want to be, with measurable milestones along the way.</p>
+          <h3>Stop Blundering</h3>
+          <p>Identify the patterns behind your mistakes and build the habits to eliminate them for good.</p>
         </div>
         <div class="why-card">
           <div class="why-icon">♛</div>
@@ -52,11 +87,41 @@ import homeData from '../content/home.json';
     </div>
   </section>
 
+  <!-- Support & Partners -->
+  <section class="support-section">
+    <div class="container">
+      <div class="support-grid">
+        <div class="support-col">
+          <h3>Support the Channel</h3>
+          <div class="link-list">
+            {support.map(s => (
+              <a href={s.href} target="_blank" rel="noopener" class="support-link">
+                <strong>{s.label}</strong>
+                <span>{s.desc}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+        <div class="support-col">
+          <h3>Partners & Tools</h3>
+          <div class="link-list">
+            {partners.map(p => (
+              <a href={p.href} target="_blank" rel="noopener" class="support-link">
+                <strong>{p.label}</strong>
+                <span>{p.desc}</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- CTA -->
   <section class="cta-banner">
     <div class="container">
-      <h2>Ready to level up your game?</h2>
-      <p>Book your first session today — no long-term commitment required.</p>
+      <h2>Ready to stop blundering?</h2>
+      <p>Book your first coaching session — no long-term commitment required.</p>
       <a href="/lessons" class="btn btn-primary btn-large">See Lesson Packages</a>
     </div>
   </section>
@@ -89,7 +154,14 @@ import homeData from '../content/home.json';
   .hero h1 {
     font-size: clamp(2.4rem, 5vw, 3.6rem);
     font-weight: 700;
-    margin-bottom: 8px;
+    margin-bottom: 4px;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    color: #888;
+    margin-bottom: 10px;
+    font-style: italic;
   }
 
   .hero-tagline {
@@ -141,7 +213,6 @@ import homeData from '../content/home.json';
     font-weight: 600;
     font-size: 0.95rem;
     transition: all 0.2s;
-    cursor: pointer;
   }
 
   .btn-primary {
@@ -170,6 +241,49 @@ import homeData from '../content/home.json';
     font-size: 1rem;
   }
 
+  /* ── Socials ── */
+  .socials {
+    background: #111418;
+    padding: 28px 0;
+    border-bottom: 1px solid #2a2e35;
+  }
+
+  .socials-label {
+    text-align: center;
+    font-size: 0.8rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #555;
+    margin-bottom: 14px;
+  }
+
+  .socials-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .social-chip {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    background: #1e2228;
+    border: 1px solid #2a2e35;
+    color: #a0a0a0;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+
+  .social-chip:hover {
+    background: #2a2e35;
+    color: var(--text-light);
+    border-color: var(--accent);
+  }
+
   /* ── Why section ── */
   .why {
     padding: 80px 0;
@@ -179,7 +293,6 @@ import homeData from '../content/home.json';
     text-align: center;
     font-size: 2rem;
     margin-bottom: 48px;
-    color: var(--text);
   }
 
   .why-grid {
@@ -211,13 +324,64 @@ import homeData from '../content/home.json';
   .why-card h3 {
     font-size: 1.1rem;
     margin-bottom: 10px;
-    color: var(--text);
   }
 
   .why-card p {
     font-size: 0.95rem;
     color: var(--text-muted);
     line-height: 1.7;
+  }
+
+  /* ── Support & Partners ── */
+  .support-section {
+    background: #f0ede6;
+    padding: 64px 0;
+  }
+
+  .support-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+
+  .support-col h3 {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+    color: var(--text);
+  }
+
+  .link-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .support-link {
+    display: flex;
+    flex-direction: column;
+    background: white;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 14px 18px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+  }
+
+  .support-link:hover {
+    border-color: var(--accent);
+    box-shadow: var(--shadow);
+  }
+
+  .support-link strong {
+    font-size: 0.95rem;
+    color: var(--text);
+  }
+
+  .support-link span {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin-top: 2px;
   }
 
   /* ── CTA Banner ── */
@@ -250,16 +414,9 @@ import homeData from '../content/home.json';
 
   /* ── Responsive ── */
   @media (max-width: 768px) {
-    .hero-inner {
-      grid-template-columns: 1fr;
-    }
-
-    .hero-photo {
-      display: none;
-    }
-
-    .why-grid {
-      grid-template-columns: 1fr;
-    }
+    .hero-inner { grid-template-columns: 1fr; }
+    .hero-photo { display: none; }
+    .why-grid { grid-template-columns: 1fr; }
+    .support-grid { grid-template-columns: 1fr; gap: 32px; }
   }
 </style>

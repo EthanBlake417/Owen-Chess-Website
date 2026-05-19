@@ -159,13 +159,31 @@ const currentPath = Astro.url.pathname;
         font-family: var(--font-serif);
         font-size: 1rem;
       }
+
+      .footer-links {
+        display: flex;
+        gap: 20px;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-top: 4px;
+      }
+
+      .footer-links a {
+        color: #6b7280;
+        font-size: 0.82rem;
+        transition: color 0.2s;
+      }
+
+      .footer-links a:hover {
+        color: var(--accent);
+      }
     </style>
   </head>
   <body>
     <nav>
       <div class="nav-inner">
         <a href="/" class="nav-logo">
-          ♟ <span>Chess</span> Coaching
+          ♟ <span>Blunder</span> Man
         </a>
         <ul class="nav-links">
           <li><a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a></li>
@@ -181,10 +199,16 @@ const currentPath = Astro.url.pathname;
 
     <footer>
       <div class="footer-inner">
-        <strong>Chess Coaching</strong>
-        <p>Helping players of all levels reach their potential.</p>
-        <p style="margin-top: 8px; font-size: 0.8rem; opacity: 0.6;">
-          © {new Date().getFullYear()} — All rights reserved
+        <strong>Blunder Man</strong>
+        <p>Chess coaching with Owen Matthess — stop blundering, start winning.</p>
+        <div class="footer-links">
+          <a href="https://www.youtube.com/@Blunder_Man" target="_blank" rel="noopener">YouTube</a>
+          <a href="https://discord.gg/U5sMBn3Wq5" target="_blank" rel="noopener">Discord</a>
+          <a href="https://patreon.com/BlunderMan" target="_blank" rel="noopener">Patreon</a>
+          <a href="https://instagram.com/blunderman_yt" target="_blank" rel="noopener">Instagram</a>
+        </div>
+        <p style="margin-top: 16px; font-size: 0.8rem; opacity: 0.6;">
+          © {new Date().getFullYear()} Blunder Man — All rights reserved
         </p>
       </div>
     </footer>
