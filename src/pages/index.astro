@@ -52,12 +52,11 @@ import homeData from '../content/home.json';
           <span class="card-cta">Join the server</span>
         </a>
 
-        <a href="/support" class="card card-accent">
+        <a href="/support" class="card">
           <span class="card-kicker">04 — Support</span>
           <h3>Back the Channel</h3>
           <p>Patreon, merch, or a one-time donation. Every bit helps keep new content coming.</p>
           <span class="card-cta">See the options</span>
-          <span class="card-stripe" aria-hidden="true"></span>
         </a>
 
       </div>
@@ -204,19 +203,6 @@ import homeData from '../content/home.json';
 
   .card:hover {
     background: var(--bg);
-  }
-
-  .card-accent .card-stripe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 4px;
-    background: var(--accent);
-  }
-
-  .card-accent {
-    padding-left: 44px;
   }
 
   .card-kicker {
