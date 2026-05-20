@@ -61,23 +61,24 @@ import homeData from '../content/home.json';
 
   .hero-inner {
     display: grid;
-    grid-template-columns: 240px 1fr;
+    grid-template-columns: 260px 1fr;
     gap: 56px;
     align-items: center;
   }
 
   .hero-photo img {
-    width: 240px;
-    height: 280px;
-    border-radius: 2px;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
     object-fit: cover;
     filter: grayscale(0.1) contrast(1.02);
+    border: 2px solid rgba(255,255,255,0.06);
   }
 
   .photo-placeholder {
-    width: 240px;
-    height: 280px;
-    border-radius: 2px;
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
     background: rgba(255,255,255,0.04);
     display: flex;
     align-items: center;
@@ -254,9 +255,9 @@ import homeData from '../content/home.json';
     .hero-photo img,
     .photo-placeholder {
       width: 100%;
-      max-width: 280px;
+      max-width: 220px;
       height: auto;
-      aspect-ratio: 4 / 5;
+      aspect-ratio: 1 / 1;
     }
     .grid-section { padding: 56px 0; }
     .card-grid { grid-template-columns: 1fr; }
