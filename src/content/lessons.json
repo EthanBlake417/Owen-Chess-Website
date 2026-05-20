@@ -25,7 +25,7 @@
       },
       {
         "question": "What is your chess rating?",
-        "answer": "I've hit 2113 rapid and 1978 blitz on chess.com\n\nMy USCF is currently 1560, but I haven't put a ton of time into OTB chess"
+        "answer": "I've hit 2113 rapid and 1978 blitz on chess.com.\n\nMy USCF is currently 1560, but I haven't put a ton of time into OTB chess."
       },
       {
         "question": "What rating range do you coach?",
@@ -33,11 +33,11 @@
       },
       {
         "question": "How long have you been coaching?",
-        "answer": "I've been teaching chess for around 2 years"
+        "answer": "I've been teaching chess for around 2 years."
       },
       {
         "question": "What are your favourite openings?",
-        "answer": "My favourite opening is the Jobava\n\nI play the Jobava London for white\nI play the Caro Kann and the Dutch for black"
+        "answer": "My favourite opening is the Jobava.\n\nI play the Jobava London for white.\nI play the Caro Kann and the Dutch for black."
       }
     ]
   }
