@@ -4,7 +4,7 @@
   "calUsername": "blundermanchess",
   "payment": {
     "heading": "Payment",
-    "price": "$50 per session",
+    "price": "$50 for 1 on 1 lesson | $20 for group lesson",
     "note": "Pay before your session. Venmo preferred — PayPal charges a transaction fee.",
     "venmo": {
       "label": "Pay with Venmo",
@@ -21,15 +21,15 @@
     "items": [
       {
         "question": "What platform do sessions happen on?",
-        "answer": "Video call (Zoom or Google Meet) while sharing a board on Lichess or Chess.com."
+        "answer": "1 on 1 lessons happen on Google Meets\nGroup lessons happen on Chessable Classroom"
       },
       {
         "question": "What skill level is this for?",
         "answer": "All levels welcome. Sessions are tailored to where you are and where you want to go."
       },
       {
-        "question": "What should I bring?",
-        "answer": "Just yourself. A few recent games to review is a bonus but not required."
+        "question": "What should I prepare?",
+        "answer": "Nothing needed. A few recent games to review is a bonus but not required."
       },
       {
         "question": "Can I reschedule?",
