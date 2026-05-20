@@ -58,6 +58,7 @@ collections:
         label: Home Page
         file: src/content/home.json
         fields:
+          - { label: Browser Tab Title, name: pageTitle, widget: string, hint: "Shown before the site title in the browser tab" }
           - { label: Eyebrow (small label above heading), name: eyebrow, widget: string }
           - { label: Name (main heading), name: name, widget: string }
           - { label: Bio, name: bio, widget: text }
@@ -88,6 +89,7 @@ collections:
         label: Lessons Page
         file: src/content/lessons.json
         fields:
+          - { label: Browser Tab Title, name: pageTitle, widget: string, hint: "Shown before the site title in the browser tab" }
           - { label: Heading, name: heading, widget: string }
           - { label: Cal.com Username, name: calUsername, widget: string, hint: "The part after cal.com/ in your booking URL" }
           - label: Payment
