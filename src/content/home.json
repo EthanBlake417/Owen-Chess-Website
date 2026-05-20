@@ -43,10 +43,17 @@
     },
     {
       "kicker": "05 — TikTok",
-      "title": "Quick Clips",
+      "title": "Short Content",
       "description": "Daily chess shorts",
       "cta": "Watch on TikTok",
       "href": "https://tiktok.com/@blunderman_yt"
+    },
+    {
+      "kicker": "06 — Instagram",
+      "title": "Short Content",
+      "description": "Daily chess shorts",
+      "cta": "Watch on Instagram",
+      "href": "https://instagram.com/blunderman_yt"
     }
   ]
 }
