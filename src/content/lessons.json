@@ -4,16 +4,16 @@
   "calUsername": "blundermanchess",
   "payment": {
     "heading": "Payment",
-    "price": "$60 per session",
+    "price": "$50 per session",
     "note": "Pay before your session. Venmo preferred — PayPal charges a transaction fee.",
     "venmo": {
       "label": "Pay with Venmo",
       "preferredBadge": "Preferred — no fees",
-      "url": "https://venmo.com"
+      "url": "https://venmo.com/u/blundermanchess"
     },
     "paypal": {
       "label": "Pay with PayPal",
-      "url": "https://paypal.com/ncp/payment/YM3PF6FPDC26G"
+      "url": "https://www.paypal.com/ncp/payment/NK78G4NQWRTXQ"
     }
   },
   "faq": {
