@@ -1,5 +1,79 @@
 {
+  "eyebrow": "Coaching · YouTube · Community",
   "name": "Blunder Man",
   "bio": "I'm an advanced/intermediate chess player on a mission to stop blundering — and help you do the same. Watch my journey on YouTube and take your game to the next level with personalized 1-on-1 coaching.",
-  "photo": "/images/blunderman.jpg"
+  "photo": "/images/blunderman.jpg",
+  "primaryCta": {
+    "label": "Book a Lesson",
+    "href": "/lessons"
+  },
+  "secondaryCta": {
+    "label": "Watch on YouTube",
+    "href": "https://www.youtube.com/@Blunder_Man"
+  },
+  "cards": [
+    {
+      "kicker": "01 — Lessons",
+      "title": "1-on-1 Coaching",
+      "description": "Personalized sessions tailored to your level and goals. Pick a time that works.",
+      "cta": "Book a lesson",
+      "href": "/lessons"
+    },
+    {
+      "kicker": "02 — YouTube",
+      "title": "Games & Analysis",
+      "description": "An intermediate player's honest take on games, openings, and the road to improvement.",
+      "cta": "Watch the channel",
+      "href": "https://www.youtube.com/@Blunder_Man"
+    },
+    {
+      "kicker": "03 — Discord",
+      "title": "Community",
+      "description": "Share games, ask questions, and play against other members of the community.",
+      "cta": "Join the server",
+      "href": "https://discord.gg/U5sMBn3Wq5"
+    },
+    {
+      "kicker": "04 — Twitch",
+      "title": "Live Streams",
+      "description": "Catch live gameplay, real-time analysis, and banter with chat.",
+      "cta": "Watch live",
+      "href": "https://twitch.tv/blundermanyt"
+    },
+    {
+      "kicker": "05 — TikTok",
+      "title": "Quick Clips",
+      "description": "Bite-sized chess content, highlights, and quick tips.",
+      "cta": "Watch on TikTok",
+      "href": "https://tiktok.com/@blunderman_yt"
+    },
+    {
+      "kicker": "06 — Merch",
+      "title": "Blunder Man Shop",
+      "description": "Shirts and gear from the official Blunder Man merch store.",
+      "cta": "Browse merch",
+      "href": "https://blunder-man.myspreadshop.com"
+    },
+    {
+      "kicker": "07 — PayPal",
+      "title": "One-Time Donation",
+      "description": "Donate any amount via PayPal. No account required.",
+      "cta": "Donate",
+      "href": "https://paypal.com/ncp/payment/YM3PF6FPDC26G"
+    },
+    {
+      "kicker": "08 — Noctie",
+      "title": "Chess Training AI",
+      "description": "AI-powered training tool. Try it through this referral link.",
+      "cta": "Try Noctie",
+      "href": "https://go.noctie.ai/blunderman"
+    },
+    {
+      "kicker": "09 — Chess.com",
+      "title": "Membership Referral",
+      "description": "Sign up for Chess.com through this referral. Costs you nothing extra.",
+      "cta": "Sign up",
+      "href": "https://chess.com/membership?ref_id=324248631"
+    }
+  ]
 }

@@ -12,23 +12,91 @@ collections:
   - name: pages
     label: Pages
     files:
+      - name: site
+        label: Site (Nav + Footer)
+        file: src/content/site.json
+        fields:
+          - { label: Brand, name: brand, widget: string }
+          - { label: Title Suffix (in browser tab), name: titleSuffix, widget: string }
+          - label: Nav Links
+            name: nav
+            widget: list
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: URL / Path, name: href, widget: string }
+          - label: Footer
+            name: footer
+            widget: object
+            fields:
+              - { label: Brand, name: brand, widget: string }
+              - label: Follow Section
+                name: follow
+                widget: object
+                fields:
+                  - { label: Heading, name: label, widget: string }
+                  - label: Links
+                    name: links
+                    widget: list
+                    fields:
+                      - { label: Label, name: label, widget: string }
+                      - { label: URL, name: url, widget: string }
+              - label: Support Section
+                name: support
+                widget: object
+                fields:
+                  - { label: Heading, name: label, widget: string }
+                  - label: Links
+                    name: links
+                    widget: list
+                    fields:
+                      - { label: Label, name: label, widget: string }
+                      - { label: URL, name: url, widget: string }
+              - { label: Copyright Suffix, name: copyright, widget: string }
+
       - name: home
         label: Home Page
         file: src/content/home.json
         fields:
-          - { label: Name, name: name, widget: string }
-          - { label: Tagline, name: tagline, widget: string }
+          - { label: Eyebrow (small label above heading), name: eyebrow, widget: string }
+          - { label: Name (main heading), name: name, widget: string }
           - { label: Bio, name: bio, widget: text }
           - { label: Profile Photo, name: photo, widget: image, required: false }
+          - label: Primary Button (e.g. Book a Lesson)
+            name: primaryCta
+            widget: object
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: URL / Path, name: href, widget: string }
+          - label: Secondary Button (e.g. Watch on YouTube)
+            name: secondaryCta
+            widget: object
+            fields:
+              - { label: Label, name: label, widget: string }
+              - { label: URL / Path, name: href, widget: string }
+          - label: Cards
+            name: cards
+            widget: list
+            fields:
+              - { label: Kicker (small label above title), name: kicker, widget: string }
+              - { label: Title, name: title, widget: string }
+              - { label: Description, name: description, widget: text }
+              - { label: Call-to-action text, name: cta, widget: string }
+              - { label: URL / Path, name: href, widget: string }
+
       - name: lessons
         label: Lessons Page
         file: src/content/lessons.json
         fields:
-          - { label: Intro Text, name: intro, widget: text }
-          - label: Packages
-            name: packages
-            widget: list
+          - { label: Heading, name: heading, widget: string }
+          - { label: Cal.com Username, name: calUsername, widget: string, hint: "The part after cal.com/ in your booking URL" }
+          - label: FAQ
+            name: faq
+            widget: object
             fields:
-              - { label: Title, name: title, widget: string }
-              - { label: Price, name: price, widget: string }
-              - { label: Description, name: description, widget: text }
+              - { label: Heading, name: heading, widget: string }
+              - label: Items
+                name: items
+                widget: list
+                fields:
+                  - { label: Question, name: question, widget: string }
+                  - { label: Answer, name: answer, widget: text }

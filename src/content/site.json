@@ -1,0 +1,32 @@
+{
+  "brand": "Blunder Man",
+  "titleSuffix": "Chess Coaching",
+  "nav": [
+    { "label": "Home", "href": "/" },
+    { "label": "Lessons", "href": "/lessons" }
+  ],
+  "footer": {
+    "brand": "Blunder Man",
+    "follow": {
+      "label": "Follow",
+      "links": [
+        { "label": "YouTube", "url": "https://www.youtube.com/@Blunder_Man" },
+        { "label": "Discord", "url": "https://discord.gg/U5sMBn3Wq5" },
+        { "label": "Twitch", "url": "https://twitch.tv/blundermanyt" },
+        { "label": "Instagram", "url": "https://instagram.com/blunderman_yt" },
+        { "label": "TikTok", "url": "https://tiktok.com/@blunderman_yt" },
+        { "label": "Facebook", "url": "https://facebook.com/profile.php?id=61579270563658" }
+      ]
+    },
+    "support": {
+      "label": "Support",
+      "links": [
+        { "label": "PayPal donation", "url": "https://paypal.com/ncp/payment/YM3PF6FPDC26G" },
+        { "label": "Merch store", "url": "https://blunder-man.myspreadshop.com" },
+        { "label": "Chess.com referral", "url": "https://chess.com/membership?ref_id=324248631" },
+        { "label": "Noctie AI", "url": "https://go.noctie.ai/blunderman" }
+      ]
+    },
+    "copyright": "All rights reserved."
+  }
+}

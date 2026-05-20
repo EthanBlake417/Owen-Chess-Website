@@ -1,7 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import lessonsData from '../content/lessons.json';
 
-const CAL_USERNAME = 'blundermanchess';
+const CAL_USERNAME = lessonsData.calUsername;
 ---
 
 <Layout title="Lessons">
@@ -10,7 +11,7 @@ const CAL_USERNAME = 'blundermanchess';
   <section class="booking" id="book">
     <div class="container">
       <div class="section-head">
-        <h1>Book your session</h1>
+        <h1>{lessonsData.heading}</h1>
       </div>
     </div>
     <div class="container container-wide">
@@ -65,25 +66,15 @@ const CAL_USERNAME = 'blundermanchess';
   <section class="faq">
     <div class="container">
       <div class="section-head">
-        <h2>Questions</h2>
+        <h2>{lessonsData.faq.heading}</h2>
       </div>
       <div class="faq-list">
-        <div class="faq-item">
-          <h3>What platform do sessions happen on?</h3>
-          <p>Video call (Zoom or Google Meet) while sharing a board on Lichess or Chess.com.</p>
-        </div>
-        <div class="faq-item">
-          <h3>What skill level is this for?</h3>
-          <p>All levels welcome. Sessions are tailored to where you are and where you want to go.</p>
-        </div>
-        <div class="faq-item">
-          <h3>What should I bring?</h3>
-          <p>Just yourself. A few recent games to review is a bonus but not required.</p>
-        </div>
-        <div class="faq-item">
-          <h3>Can I reschedule?</h3>
-          <p>Yes. Reschedule or cancel through Cal.com up to 24 hours before your session.</p>
-        </div>
+        {lessonsData.faq.items.map((item) => (
+          <div class="faq-item">
+            <h3>{item.question}</h3>
+            <p>{item.answer}</p>
+          </div>
+        ))}
       </div>
     </div>
   </section>

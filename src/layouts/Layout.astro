@@ -1,6 +1,8 @@
 ---
+import siteData from '../content/site.json';
 const { title } = Astro.props;
 const currentPath = Astro.url.pathname;
+const year = new Date().getFullYear();
 ---
 
 <!DOCTYPE html>
@@ -8,7 +10,7 @@ const currentPath = Astro.url.pathname;
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>{title} | Chess Coaching</title>
+    <title>{title} | {siteData.titleSuffix}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
@@ -219,12 +221,11 @@ const currentPath = Astro.url.pathname;
   <body>
     <nav>
       <div class="nav-inner">
-        <a href="/" class="nav-logo">
-          Blunder <em>Man</em>
-        </a>
+        <a href="/" class="nav-logo">{siteData.brand}</a>
         <ul class="nav-links">
-          <li><a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a></li>
-          <li><a href="/lessons" class={currentPath === '/lessons' ? 'active' : ''}>Lessons</a></li>
+          {siteData.nav.map((item) => (
+            <li><a href={item.href} class={currentPath === item.href ? 'active' : ''}>{item.label}</a></li>
+          ))}
         </ul>
       </div>
     </nav>
@@ -236,27 +237,23 @@ const currentPath = Astro.url.pathname;
     <footer>
       <div class="footer-inner">
         <div class="footer-brand">
-          <strong>Blunder Man</strong>
+          <strong>{siteData.footer.brand}</strong>
         </div>
         <div class="footer-columns">
           <div class="footer-col">
-            <h4>Follow</h4>
-            <a href="https://www.youtube.com/@Blunder_Man" target="_blank" rel="noopener">YouTube</a>
-            <a href="https://discord.gg/U5sMBn3Wq5" target="_blank" rel="noopener">Discord</a>
-            <a href="https://twitch.tv/blundermanyt" target="_blank" rel="noopener">Twitch</a>
-            <a href="https://instagram.com/blunderman_yt" target="_blank" rel="noopener">Instagram</a>
-            <a href="https://tiktok.com/@blunderman_yt" target="_blank" rel="noopener">TikTok</a>
-            <a href="https://facebook.com/profile.php?id=61579270563658" target="_blank" rel="noopener">Facebook</a>
+            <h4>{siteData.footer.follow.label}</h4>
+            {siteData.footer.follow.links.map((link) => (
+              <a href={link.url} target="_blank" rel="noopener">{link.label}</a>
+            ))}
           </div>
           <div class="footer-col">
-            <h4>Support</h4>
-            <a href="https://paypal.com/ncp/payment/YM3PF6FPDC26G" target="_blank" rel="noopener">PayPal donation</a>
-            <a href="https://blunder-man.myspreadshop.com" target="_blank" rel="noopener">Merch store</a>
-            <a href="https://chess.com/membership?ref_id=324248631" target="_blank" rel="noopener">Chess.com referral</a>
-            <a href="https://go.noctie.ai/blunderman" target="_blank" rel="noopener">Noctie AI</a>
+            <h4>{siteData.footer.support.label}</h4>
+            {siteData.footer.support.links.map((link) => (
+              <a href={link.url} target="_blank" rel="noopener">{link.label}</a>
+            ))}
           </div>
         </div>
-        <p class="footer-meta">© {new Date().getFullYear()} Blunder Man. All rights reserved.</p>
+        <p class="footer-meta">© {year} {siteData.footer.brand}. {siteData.footer.copyright}</p>
       </div>
     </footer>
   </body>

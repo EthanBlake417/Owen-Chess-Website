@@ -1,20 +1,25 @@
 {
-  "intro": "Whether you're just starting out or pushing toward your next rating milestone, personalized 1-on-1 coaching accelerates your progress faster than any book or course.",
-  "packages": [
-    {
-      "title": "Single Session",
-      "price": "$60",
-      "description": "One 60-minute coaching session. Great for a specific opening, endgame question, or game analysis."
-    },
-    {
-      "title": "Starter Pack",
-      "price": "$160",
-      "description": "Three 60-minute sessions. Build on each lesson with continuity and a tailored study plan."
-    },
-    {
-      "title": "Monthly Training",
-      "price": "$280",
-      "description": "Six sessions per month with ongoing game review, custom puzzles, and direct feedback between sessions."
-    }
-  ]
+  "heading": "Book your session",
+  "calUsername": "blundermanchess",
+  "faq": {
+    "heading": "Questions",
+    "items": [
+      {
+        "question": "What platform do sessions happen on?",
+        "answer": "Video call (Zoom or Google Meet) while sharing a board on Lichess or Chess.com."
+      },
+      {
+        "question": "What skill level is this for?",
+        "answer": "All levels welcome. Sessions are tailored to where you are and where you want to go."
+      },
+      {
+        "question": "What should I bring?",
+        "answer": "Just yourself. A few recent games to review is a bonus but not required."
+      },
+      {
+        "question": "Can I reschedule?",
+        "answer": "Yes. Reschedule or cancel through Cal.com up to 24 hours before your session."
+      }
+    ]
+  }
 }
