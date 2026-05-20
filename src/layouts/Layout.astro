@@ -147,57 +147,71 @@ const currentPath = Astro.url.pathname;
       footer {
         background: var(--bg-dark);
         color: #8a857a;
-        padding: 56px 24px 40px;
+        padding: 32px 24px 24px;
       }
 
       .footer-inner {
         max-width: var(--max-width);
         margin: 0 auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        text-align: center;
         font-size: 0.88rem;
+        text-align: center;
       }
 
-      .footer-inner strong {
+      .footer-brand {
+        margin-bottom: 14px;
+      }
+
+      .footer-brand strong {
+        display: block;
         color: var(--text-light);
         font-family: var(--font-serif);
         font-weight: 600;
-        font-size: 1.1rem;
+        font-size: 1.05rem;
         letter-spacing: 0.02em;
       }
 
-      .footer-inner p {
-        max-width: 480px;
-      }
-
-      .footer-links {
+      .footer-columns {
         display: flex;
-        gap: 24px;
-        flex-wrap: wrap;
-        justify-content: center;
-        margin-top: 12px;
-        padding-top: 20px;
-        border-top: 1px solid rgba(255,255,255,0.06);
-        width: 100%;
-        max-width: 480px;
+        flex-direction: column;
+        gap: 8px;
+        padding: 14px 0;
+        border-top: 1px solid rgba(255,255,255,0.08);
+        border-bottom: 1px solid rgba(255,255,255,0.08);
+        max-width: 720px;
+        margin: 0 auto;
       }
 
-      .footer-links a {
+      .footer-col {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 6px 18px;
+      }
+
+      .footer-col h4 {
+        font-family: var(--font-sans);
+        font-size: 0.7rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.14em;
+        color: var(--accent);
+        margin: 0;
+      }
+
+      .footer-col a {
         color: #8a857a;
-        font-size: 0.82rem;
+        font-size: 0.84rem;
         transition: color 0.18s;
       }
 
-      .footer-links a:hover {
+      .footer-col a:hover {
         color: var(--text-light);
       }
 
       .footer-meta {
-        margin-top: 18px;
-        font-size: 0.78rem;
+        margin-top: 12px;
+        font-size: 0.76rem;
         color: #5a5650;
       }
     </style>
@@ -211,7 +225,6 @@ const currentPath = Astro.url.pathname;
         <ul class="nav-links">
           <li><a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a></li>
           <li><a href="/lessons" class={currentPath === '/lessons' ? 'active' : ''}>Lessons</a></li>
-          <li><a href="/support" class={currentPath === '/support' ? 'active' : ''}>Support</a></li>
         </ul>
       </div>
     </nav>
@@ -222,14 +235,26 @@ const currentPath = Astro.url.pathname;
 
     <footer>
       <div class="footer-inner">
-        <strong>Blunder Man</strong>
-        <p>Chess coaching with Owen Matthess.</p>
-        <div class="footer-links">
-          <a href="/lessons">Lessons</a>
-          <a href="/support">Support</a>
-          <a href="https://www.youtube.com/@Blunder_Man" target="_blank" rel="noopener">YouTube</a>
-          <a href="https://discord.gg/U5sMBn3Wq5" target="_blank" rel="noopener">Discord</a>
-          <a href="https://patreon.com/BlunderMan" target="_blank" rel="noopener">Patreon</a>
+        <div class="footer-brand">
+          <strong>Blunder Man</strong>
+        </div>
+        <div class="footer-columns">
+          <div class="footer-col">
+            <h4>Follow</h4>
+            <a href="https://www.youtube.com/@Blunder_Man" target="_blank" rel="noopener">YouTube</a>
+            <a href="https://discord.gg/U5sMBn3Wq5" target="_blank" rel="noopener">Discord</a>
+            <a href="https://twitch.tv/blundermanyt" target="_blank" rel="noopener">Twitch</a>
+            <a href="https://instagram.com/blunderman_yt" target="_blank" rel="noopener">Instagram</a>
+            <a href="https://tiktok.com/@blunderman_yt" target="_blank" rel="noopener">TikTok</a>
+            <a href="https://facebook.com/profile.php?id=61579270563658" target="_blank" rel="noopener">Facebook</a>
+          </div>
+          <div class="footer-col">
+            <h4>Support</h4>
+            <a href="https://paypal.com/ncp/payment/YM3PF6FPDC26G" target="_blank" rel="noopener">PayPal donation</a>
+            <a href="https://blunder-man.myspreadshop.com" target="_blank" rel="noopener">Merch store</a>
+            <a href="https://chess.com/membership?ref_id=324248631" target="_blank" rel="noopener">Chess.com referral</a>
+            <a href="https://go.noctie.ai/blunderman" target="_blank" rel="noopener">Noctie AI</a>
+          </div>
         </div>
         <p class="footer-meta">© {new Date().getFullYear()} Blunder Man. All rights reserved.</p>
       </div>
