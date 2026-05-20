@@ -20,20 +20,24 @@
     "heading": "Questions",
     "items": [
       {
-        "question": "What platform do sessions happen on?",
-        "answer": "1 on 1 lessons happen on Google Meets\nGroup lessons happen on Chessable Classroom"
+        "question": "What time are your Group Lessons?",
+        "answer": "Every Thursday, 6:30pm-7:30pm MST\n"
       },
       {
-        "question": "What skill level is this for?",
+        "question": "What is your chess rating?",
+        "answer": "I've hit 2113 rapid and 1978 blitz on chess.com\n\nMy USCF is currently 1560, but I haven't put a ton of time into OTB chess"
+      },
+      {
+        "question": "What rating range do you coach?",
         "answer": "All levels welcome. Sessions are tailored to where you are and where you want to go."
       },
       {
-        "question": "What should I prepare?",
-        "answer": "Nothing needed. A few recent games to review is a bonus but not required."
+        "question": "How long have you been coaching?",
+        "answer": "I've been teaching chess for around 2 years"
       },
       {
-        "question": "Can I reschedule?",
-        "answer": "Yes. Reschedule or cancel through the Cal.com cancellation link (sent to your email) up to 24 hours before your session."
+        "question": "What are your favourite openings?",
+        "answer": "My favourite opening is the Jobava\n\nI play the Jobava London for white\nI play the Caro Kann and the Dutch for black"
       }
     ]
   }
