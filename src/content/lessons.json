@@ -20,8 +20,8 @@
     "heading": "Questions",
     "items": [
       {
-        "question": "What time are your Group Lessons?",
-        "answer": "Every Thursday, 6:30pm-7:30pm MST\n"
+        "question": "What is different between the Group Coaching and the 1 on 1 Coaching?",
+        "answer": "Group Coaching is a structured, step-by-step course designed for players in a similar rating range. It covers core improvement areas like tactics, calculation, and positional understanding in a methodical way, helping you build strong fundamentals and improve steadily over time.\n\n1-on-1 Coaching is fully personalized and focuses on your own games, mistakes, and patterns. It’s designed to target specific issues you can fix quickly, as well as deeper work like opening preparation or any areas of your game you know are weak and want to improve directly."
       },
       {
         "question": "What is your chess rating?",
@@ -37,7 +37,7 @@
       },
       {
         "question": "What are your favourite openings?",
-        "answer": "My favourite opening is the Jobava.\n\nI play the Jobava London for white.\nI play the Caro Kann and the Dutch for black."
+        "answer": "My favourite opening is the Jobava system, which I enjoy because it has clear plans but also a lot of aggressive and creative possibilities depending on how Black responds.\n\nAs Black, I play the Caro-Kann and the Classical Dutch. I like the Caro-Kann because it’s simple, solid, and I usually feel like I understand exactly what I’m supposed to be doing. The Classical Dutch is much more aggressive, and I enjoy the attacking positions it creates, especially the chances to build towards a kingside attack and go for checkmate."
       }
     ]
   }
