@@ -142,6 +142,41 @@
                       hint: 'The part after cal.com/ in your booking URL',
                     },
                     {
+                      label: 'Payment',
+                      name: 'payment',
+                      widget: 'object',
+                      fields: [
+                        { label: 'Heading', name: 'heading', widget: 'string' },
+                        { label: 'Price', name: 'price', widget: 'string' },
+                        { label: 'Note', name: 'note', widget: 'text' },
+                        {
+                          label: 'Venmo',
+                          name: 'venmo',
+                          widget: 'object',
+                          fields: [
+                            { label: 'Button Label', name: 'label', widget: 'string' },
+                            {
+                              label: '"Preferred" Badge text',
+                              name: 'preferredBadge',
+                              widget: 'string',
+                              required: false,
+                              hint: 'Small badge shown on the Venmo button. Leave empty to hide.',
+                            },
+                            { label: 'Venmo URL', name: 'url', widget: 'string' },
+                          ],
+                        },
+                        {
+                          label: 'PayPal',
+                          name: 'paypal',
+                          widget: 'object',
+                          fields: [
+                            { label: 'Button Label', name: 'label', widget: 'string' },
+                            { label: 'PayPal URL', name: 'url', widget: 'string' },
+                          ],
+                        },
+                      ],
+                    },
+                    {
                       label: 'FAQ',
                       name: 'faq',
                       widget: 'object',

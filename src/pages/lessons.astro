@@ -9,13 +9,41 @@ const CAL_USERNAME = lessonsData.calUsername;
 
   <!-- Booking -->
   <section class="booking" id="book">
-    <div class="container">
+    <div class="container container-wide">
       <div class="section-head">
         <h1>{lessonsData.heading}</h1>
       </div>
-    </div>
-    <div class="container container-wide">
+
       <div id="cal-inline" class="cal-wrap"></div>
+
+      <div class="payment">
+        <div class="payment-head">
+          <h2>{lessonsData.payment.heading}</h2>
+          <span class="payment-price">{lessonsData.payment.price}</span>
+        </div>
+        <p class="payment-note">{lessonsData.payment.note}</p>
+        <div class="payment-buttons">
+          <a
+            href={lessonsData.payment.venmo.url}
+            target="_blank"
+            rel="noopener"
+            class="btn-pay btn-pay-primary"
+          >
+            <span>{lessonsData.payment.venmo.label}</span>
+            {lessonsData.payment.venmo.preferredBadge && (
+              <span class="preferred-badge">{lessonsData.payment.venmo.preferredBadge}</span>
+            )}
+          </a>
+          <a
+            href={lessonsData.payment.paypal.url}
+            target="_blank"
+            rel="noopener"
+            class="btn-pay btn-pay-outline"
+          >
+            {lessonsData.payment.paypal.label}
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -87,6 +115,12 @@ const CAL_USERNAME = lessonsData.calUsername;
     max-width: 600px;
   }
 
+  .booking .section-head {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   .section-head h1 {
     font-size: clamp(2rem, 4vw, 2.6rem);
     letter-spacing: -0.01em;
@@ -109,8 +143,106 @@ const CAL_USERNAME = lessonsData.calUsername;
     max-width: 1180px;
   }
 
+  /* ── Payment ── */
+  .payment {
+    border: 1px solid var(--border);
+    background: var(--bg-card);
+    padding: 28px 32px;
+    margin: 12px auto 0;
+    max-width: 1040px;
+    width: 100%;
+    border-radius: 10px;
+  }
+
+  .payment-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+  }
+
+  .payment-head h2 {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    letter-spacing: -0.005em;
+    margin: 0;
+  }
+
+  .payment-price {
+    font-family: var(--font-serif);
+    font-size: 1.4rem;
+    color: var(--accent);
+    font-weight: 600;
+  }
+
+  .payment-note {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 22px;
+    max-width: 580px;
+  }
+
+  .payment-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .btn-pay {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 11px 22px;
+    border-radius: 2px;
+    font-size: 0.92rem;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    border: 1px solid transparent;
+    transition: all 0.18s ease;
+  }
+
+  .btn-pay-primary {
+    background: var(--accent);
+    color: #fff;
+    border-color: var(--accent);
+  }
+
+  .btn-pay-primary:hover {
+    background: var(--accent-dark);
+    border-color: var(--accent-dark);
+  }
+
+  .btn-pay-outline {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--border);
+  }
+
+  .btn-pay-outline:hover {
+    border-color: var(--accent);
+    color: var(--accent);
+  }
+
+  .preferred-badge {
+    font-size: 0.66rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    padding: 3px 8px;
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 999px;
+    line-height: 1;
+    white-space: nowrap;
+  }
+
   .cal-wrap {
     width: 100%;
+    max-width: 1040px;
+    margin: 0 auto;
     min-height: 560px;
     background: transparent;
   }
@@ -118,6 +250,19 @@ const CAL_USERNAME = lessonsData.calUsername;
   .cal-wrap :global(iframe) {
     width: 100% !important;
     border: 0;
+  }
+
+  @media (max-width: 520px) {
+    .payment {
+      padding: 22px 22px 24px;
+    }
+    .payment-buttons {
+      flex-direction: column;
+      align-items: stretch;
+    }
+    .btn-pay {
+      justify-content: center;
+    }
   }
 
   /* ── FAQ ── */
