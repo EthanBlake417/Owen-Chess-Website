@@ -4,7 +4,7 @@
   "calUsername": "blundermanchess",
   "payment": {
     "heading": "Payment",
-    "price": "$50 for 1 on 1 lesson | $20 for group lesson test",
+    "price": "$50 for 1 on 1 lesson | $20 for group lesson",
     "note": "Pay before your session. Venmo preferred — PayPal charges a transaction fee.",
     "venmo": {
       "label": "Pay with Venmo",
