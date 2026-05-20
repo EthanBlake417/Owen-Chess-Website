@@ -1,5 +1,6 @@
 {
   "brand": "Blunder Man",
+  "logo": "/images/blunderman.jpg",
   "titleSuffix": "Chess Coaching",
   "nav": [
     { "label": "Home", "href": "/" },

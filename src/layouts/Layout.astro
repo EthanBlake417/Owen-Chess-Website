@@ -103,6 +103,17 @@ const year = new Date().getFullYear();
         font-weight: 700;
         color: var(--text);
         letter-spacing: 0.01em;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+
+      .nav-logo img {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        object-fit: cover;
+        display: block;
       }
 
       .nav-logo em {
@@ -161,15 +172,26 @@ const year = new Date().getFullYear();
 
       .footer-brand {
         margin-bottom: 14px;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
       }
 
       .footer-brand strong {
-        display: block;
         color: var(--text-light);
         font-family: var(--font-serif);
         font-weight: 600;
         font-size: 1.05rem;
         letter-spacing: 0.02em;
+      }
+
+      .footer-brand img {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        object-fit: cover;
+        order: 2;
+        display: block;
       }
 
       .footer-columns {
@@ -221,7 +243,10 @@ const year = new Date().getFullYear();
   <body>
     <nav>
       <div class="nav-inner">
-        <a href="/" class="nav-logo">{siteData.brand}</a>
+        <a href="/" class="nav-logo">
+          {siteData.logo && <img src={siteData.logo} alt="" />}
+          <span>{siteData.brand}</span>
+        </a>
         <ul class="nav-links">
           {siteData.nav.map((item) => (
             <li><a href={item.href} class={currentPath === item.href ? 'active' : ''}>{item.label}</a></li>
@@ -238,6 +263,7 @@ const year = new Date().getFullYear();
       <div class="footer-inner">
         <div class="footer-brand">
           <strong>{siteData.footer.brand}</strong>
+          {siteData.logo && <img src={siteData.logo} alt="" />}
         </div>
         <div class="footer-columns">
           <div class="footer-col">
